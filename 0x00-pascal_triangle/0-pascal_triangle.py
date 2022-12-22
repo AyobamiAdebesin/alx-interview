@@ -19,7 +19,7 @@ def combination(n, r):
     """
     Compute the combinatorial coefficients
     """
-    if not isinstance(n, int) and not isinstance(r, int):
+    if not isinstance(n, int) or not isinstance(r, int):
         raise TypeError("n and r must be integers")
     return int(factorial(n)/(factorial(n-r)*factorial(r)))
 
