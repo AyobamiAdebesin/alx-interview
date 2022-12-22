@@ -3,6 +3,9 @@
 
 
 def factorial(n):
+    """
+    Compute the factorial of n
+    """
     # if not isinstance(n, int):
     #     raise TypeError("n must be an integer")
     if n < 0:
@@ -15,12 +18,18 @@ def factorial(n):
 
 
 def combination(n, r):
+    """
+    Compute the combinatorial coefficients
+    """
     # if not isinstance(n, int) and not isinstance(r, int):
     #     raise TypeError("n and r must be integers")
     return int(factorial(n)/(factorial(n-r)*factorial(r)))
 
 
 def pascal_triangle(n):
+    """
+    Construct the pascal triangle of height n
+    """
     output_arr = []
     if n <= 0:
         return [output_arr]
