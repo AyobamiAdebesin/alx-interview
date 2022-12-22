@@ -15,6 +15,8 @@ def factorial(n):
 
 
 def combination(n, r):
+    if not isinstance(n, int) and not isinstance(r, int):
+        raise TypeError(f"{n} and {r} must be integers")
     return int(factorial(n)/(factorial(n-r)*factorial(r)))
 
 
@@ -26,12 +28,12 @@ def pascal_triangle(n):
         raise ValueError("n cannot be less than 0")
     output_arr = []
 
-    for i in range(n):
+    for i in range(n+1):
         if i == 0:
             output_arr.append([1])
         else:
             arr = []
             for j in range(i+1):
-                arr.append(combination(i+1, j))
+                arr.append(combination(i, j))
             output_arr.append(arr)
     return output_arr
