@@ -30,9 +30,9 @@ def pascal_triangle(n):
     """
     output_arr = []
     if not isinstance(n, int):
-        return [output_arr]
+        return output_arr
     if n <= 0:
-        return [output_arr]
+        return output_arr
 
     for i in range(n):
         arr = []
