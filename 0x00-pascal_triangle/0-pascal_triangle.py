@@ -21,19 +21,17 @@ def combination(n, r):
 
 
 def pascal_triangle(n):
+    output_arr = []
     if not isinstance(n, int):
         raise TypeError("n must be an integer")
         return False
-    if n < 0:
+    if n <= 0:
         raise ValueError("n cannot be less than 0")
-    output_arr = []
+        return output_arr
 
     for i in range(n):
-        if i == 0:
-            output_arr.append([1])
-        else:
-            arr = []
-            for j in range(i+1):
-                arr.append(combination(i, j))
-            output_arr.append(arr)
+        arr = []
+        for j in range(i+1):
+            arr.append(combination(i, j))
+        output_arr.append(arr)
     return output_arr
