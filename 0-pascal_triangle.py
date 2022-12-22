@@ -17,6 +17,7 @@ def factorial(n):
 def combination(n, r):
     return int(factorial(n)/(factorial(n-r)*factorial(r)))
 
+
 def pascal_triangle(n):
     if not isinstance(n, int):
         raise TypeError(f"{n} must be an integer")
@@ -33,8 +34,3 @@ def pascal_triangle(n):
                 arr.append(combination(i+1, j))
             output_arr.append(arr)
     return output_arr
-
-if __name__ == "__main__":
-    triangle = pascal_triangle(5)
-    for i in triangle:
-        print(i)
