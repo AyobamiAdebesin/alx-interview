@@ -28,7 +28,7 @@ def pascal_triangle(n):
         raise ValueError("n cannot be less than 0")
     output_arr = []
 
-    for i in range(n+1):
+    for i in range(n):
         if i == 0:
             output_arr.append([1])
         else:
