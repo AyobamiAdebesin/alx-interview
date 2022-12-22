@@ -3,8 +3,8 @@
 
 
 def factorial(n):
-    if not isinstance(n, int):
-        raise TypeError("n must be an integer")
+    # if not isinstance(n, int):
+    #     raise TypeError("n must be an integer")
     if n < 0:
         return False
     if n == 0:
@@ -15,8 +15,8 @@ def factorial(n):
 
 
 def combination(n, r):
-    if not isinstance(n, int) and not isinstance(r, int):
-        raise TypeError("n and r must be integers")
+    # if not isinstance(n, int) and not isinstance(r, int):
+    #     raise TypeError("n and r must be integers")
     return int(factorial(n)/(factorial(n-r)*factorial(r)))
 
 
