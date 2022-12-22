@@ -26,7 +26,6 @@ def pascal_triangle(n):
         raise TypeError("n must be an integer")
         return False
     if n <= 0:
-        raise ValueError("n cannot be less than 0")
         return output_arr
 
     for i in range(n):
