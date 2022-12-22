@@ -22,15 +22,16 @@ def pascal_triangle(n):
     if not isinstance(n, int):
         raise TypeError(f"{n} must be an integer")
         return False
-    # if n <= 0:
-    #     raise ValueError("n cannot be less than 0")
+    if n < 0:
+        raise ValueError("n cannot be less than 0")
     output_arr = []
-    if n == 1:
-        return output_arr.append([1])
-    else:
-        for i in range(n):
+
+    for i in range(n):
+        if i == 0:
+            output_arr.append([1])
+        else:
+            arr = []
             for j in range(i+1):
-                arr = []
                 arr.append(combination(i+1, j))
             output_arr.append(arr)
     return output_arr
