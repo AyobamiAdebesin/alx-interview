@@ -22,9 +22,6 @@ def combination(n, r):
 
 def pascal_triangle(n):
     output_arr = []
-    if not isinstance(n, int):
-        raise TypeError("n must be an integer")
-        return False
     if n <= 0:
         return [output_arr]
 
