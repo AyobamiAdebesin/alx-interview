@@ -2,41 +2,26 @@
 """ A Pascal Triangle Implementation """
 
 
-def factorial(n):
-    """
-    Compute the factorial of n
-    """
-    if not isinstance(n, int):
-        raise TypeError("n must be an integer")
-    if n < 0 or n == 0:
-        return 1
-    else:
-        fact = n * factorial(n-1)
-        return fact
-
-
-def combination(n, r):
-    """
-    Compute the combinatorial coefficients
-    """
-    if not isinstance(n, int) or not isinstance(r, int):
-        raise TypeError("n and r must be integers")
-    return int(factorial(n)/(factorial(n-r)*factorial(r)))
-
-
 def pascal_triangle(n):
-    """
-    Construct the pascal triangle of height n
-    """
-    output_arr = []
-    if not isinstance(n, int):
-        return output_arr
+    """returns a list of lists of numbers
+    representing the pascal triangle"""
     if n <= 0:
-        return output_arr
+        return []
+
+    pascal_triangle = [0] * n
 
     for i in range(n):
-        arr = []
-        for j in range(i+1):
-            arr.append(combination(i, j))
-        output_arr.append(arr)
-    return output_arr
+        # define a row and fill first and last idx with 1
+        new_row = [0] * (i+1)
+        new_row[0] = 1
+        new_row[len(new_row) - 1] = 1
+
+        for j in range(1, i):
+            if j > 0 and j < len(new_row):
+                a = pascal_triangle[i - 1][j]
+                b = pascal_triangle[i - 1][j - 1]
+                new_row[j] = a + b
+
+        pascal_triangle[i] = new_row
+
+    return pascal_triangle
