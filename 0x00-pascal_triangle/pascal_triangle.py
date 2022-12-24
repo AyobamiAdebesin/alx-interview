@@ -1,4 +1,5 @@
-
+#!/usr/bin/python3
+import time
 
 def factorial(n):
     """
@@ -26,6 +27,7 @@ def pascal_triangle(n):
     """
     Construct the pascal triangle of height n
     """
+    start = time.time()
     output_arr = []
     if not isinstance(n, int):
         return output_arr
@@ -37,4 +39,7 @@ def pascal_triangle(n):
         for j in range(i+1):
             arr.append(combination(i, j))
         output_arr.append(arr)
+    end = time.time()
+
+    print("Time taken to run: ", end-start)
     return output_arr
