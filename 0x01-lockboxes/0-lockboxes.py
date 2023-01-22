@@ -24,12 +24,13 @@ def canUnlockAll(boxes: Sequence[List[int]]) -> bool:
                     new_keys = boxes[key]
                     if len(new_keys) != 0:
                         temp_holder = [y for y in keys if y not in keys_found]
-                        boxes_not_opened.pop(key)
+                        keys_found.extend(temp_holder)
+                        boxes_not_opened.remove(key)
                 else:
                     continue
         else:
             boxes_not_opened.append(idx)
-    if boxes_not_opened != 0:
+    if len(boxes_not_opened) != 0:
         return False
     else:
         return True
