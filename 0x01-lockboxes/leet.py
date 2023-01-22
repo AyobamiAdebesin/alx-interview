@@ -9,21 +9,20 @@ def canUnlockAll(rooms):
     rooms_opened = [0]
     rooms_not_opened = []
 
-    for idx in range(1, len(rooms)):
+    for idx in range(1, len(rooms)):        
         if idx in keys_found:
             rooms_opened.append(idx)
             keys = rooms[idx]
             if len(keys) != 0:
                 keys_found.update(keys)
-                continue
-            for key in keys:
-                if key in rooms_not_opened:
-                    new_keys = rooms[key]
-                    if len(new_keys) != 0:
-                        keys_found.update(new_keys)
-                        rooms_not_opened.remove(key)
-                else:
-                    continue
+                for key in keys:
+                    if key in rooms_not_opened:
+                        new_keys = rooms[key]
+                        if len(new_keys) != 0:
+                                keys_found.update(new_keys)
+                                rooms_not_opened.remove(key)
+                        else:
+                            rooms_not_opened.remove(key)
         else:
             rooms_not_opened.append(idx)
     if len(rooms_not_opened) != 0:
