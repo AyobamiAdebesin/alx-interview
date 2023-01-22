@@ -1,12 +1,15 @@
 #!/usr/bin/python3
 """ Lockrooms """
-
-def canUnlockAll(rooms):
-    """ Can we  unlock all rooms """
+from typing import List, Set
+def canUnlockAll(rooms: List[List[int]]) -> bool:
+    """ Can we  unlock all rooms? 
+    Return True if we can visit and unlock all rooms
+    else return False
+    """
     if not isinstance(rooms, list):
         raise TypeError("rooms must be a list of lists")
-    keys_found = set(rooms[0])
-    rooms_not_opened = []
+    keys_found: Set[int] = set(rooms[0])
+    rooms_not_opened: List[int] = []
 
     for idx in range(1, len(rooms)):        
         if idx in keys_found:
