@@ -6,12 +6,10 @@ def canUnlockAll(rooms):
     if not isinstance(rooms, list):
         raise TypeError("rooms must be a list of lists")
     keys_found = set(rooms[0])
-    rooms_opened = [0]
     rooms_not_opened = []
 
     for idx in range(1, len(rooms)):        
         if idx in keys_found:
-            rooms_opened.append(idx)
             keys = rooms[idx]
             if len(keys) != 0:
                 keys_found.update(keys)
