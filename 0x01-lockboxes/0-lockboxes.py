@@ -1,9 +1,9 @@
 #!/usr/bin/python3
 """ Lockboxes """
-from typing import List, Sequence
 
 
-def canUnlockAll(boxes: Sequence[List[int]]) -> bool:
+def canUnlockAll(boxes):
+    """ Can we  unlock all boxes """
     if not isinstance(boxes, list):
         raise TypeError("boxes must be a list of lists")
     keys_found = [x for x in boxes[0]]
