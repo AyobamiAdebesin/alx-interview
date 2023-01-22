@@ -1,8 +1,10 @@
 #!/usr/bin/python3
 """ Lockrooms """
 from typing import List, Set
+
+
 def canUnlockAll(rooms: List[List[int]]) -> bool:
-    """ Can we  unlock all rooms? 
+    """ Can we  unlock all rooms?
     Return True if we can visit and unlock all rooms
     else return False
     """
@@ -11,7 +13,7 @@ def canUnlockAll(rooms: List[List[int]]) -> bool:
     keys_found: Set[int] = set(rooms[0])
     rooms_not_opened: List[int] = []
 
-    for idx in range(1, len(rooms)):        
+    for idx in range(1, len(rooms)):
         if idx in keys_found:
             keys = rooms[idx]
             if len(keys) != 0:
@@ -20,8 +22,8 @@ def canUnlockAll(rooms: List[List[int]]) -> bool:
                     if key in rooms_not_opened:
                         new_keys = rooms[key]
                         if len(new_keys) != 0:
-                                keys_found.update(new_keys)
-                                rooms_not_opened.remove(key)
+                            keys_found.update(new_keys)
+                            rooms_not_opened.remove(key)
                         else:
                             rooms_not_opened.remove(key)
         else:
