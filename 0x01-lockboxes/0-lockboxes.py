@@ -29,9 +29,7 @@ def canUnlockAll(boxes: Sequence[List[int]]) -> bool:
                     continue
         else:
             boxes_not_opened.append(idx)
-    
     if boxes_not_opened != 0:
         return False
     else:
         return True
-
